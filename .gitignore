@@ -1,0 +1,7 @@
+/target/
+*.class
+*.jar
+.jqwik-database
+/.classpath
+/.project
+/.settings/
