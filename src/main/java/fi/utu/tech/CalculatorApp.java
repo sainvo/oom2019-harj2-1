@@ -1,5 +1,8 @@
 package fi.utu.tech;
 
+import java.util.*;
+import java.util.regex.PatternSyntaxException;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -21,18 +24,67 @@ public class CalculatorApp extends Application {
 	// joskus toimii, joskus ei
 	//
 	// t. 1. vuoden opiskelija
+	//-------------------------------------//
+	//REFRAKTOROINTI
+	/*
+	 * ottaa tekstimuotoisen inputin ja splittaa sen
+	 * evaluoi inputin muodon " " löytymisen perusteella 
+	 * @.pre input != null && input.contains(" ").
+	 * @.post RESULT.length == 3) 
+	 */
+	public String[] inputSplitter(String input) throws PatternSyntaxException{
+		String[] returnValue = {};
+		try {
+			int valit = 0;
+			for( int i = 0; i < input.length(); i++) {
+				if(input.charAt(i)==' ') {
+					valit++;
+				}
+			}
+			if(valit == 2) {
+				String[] j= input.split(" ",3);
+				returnValue = j;	
+			}
+		}
+		catch (PatternSyntaxException e) {
+				System.out.println(e.getMessage());
+				returnValue = null;
+			}
+		return returnValue;
+	}	
+	
+	/*
+	 * laskee determinantin syötteenä saadusta double-listasta
+	 * @.pre inputAsDouble != null && inputAsDouble.length == 3
+	 * @.post RESULT > 0 || RESULT = 0
+	 * 
+	 */
+	ArrayList <Double> discriminantCounter (String[] splitInput) {
+		ArrayList <Double> doubles = new ArrayList <Double>();
+		double a = Double.parseDouble(splitInput[0]);
+		double b = Double.parseDouble(splitInput[1]);
+		double c = Double.parseDouble(splitInput[2]);
+	
+		double disc = b*b - 4*a*c;
+		if(disc < 0) {
+			throw new NoResultsException("Ei reaaliratkaisuja");
+		}else {
+			doubles.add(a);
+			doubles.add(b);
+			doubles.add(c);
+			doubles.add(disc);
+			
+		}return doubles;
+	}
 	
 	String calculate(String input) {
-		String[] i = input.split(" ");
+		String[] valid = inputSplitter(input);
+		ArrayList<Double> doubles = discriminantCounter(valid);
 		
-		double a = Double.parseDouble(i[0]);
-		double b = Double.parseDouble(i[1]);
-		double c = Double.parseDouble(i[2]);
-
 		double r1, r2;
 		
-		r1 = (-b+Math.sqrt(b*b - 4*a*c))/(2*a);
-		r2 = (-b-Math.sqrt(b*b - 4*a*c))/(2*a);
+		r1 = (-doubles.get(1)+Math.sqrt(doubles.get(3)))/(2*doubles.get(0));
+		r2 = (-doubles.get(1)-Math.sqrt(doubles.get(3)))/(2*doubles.get(0));
 		
 		if (r1 == r2)
 			return "Ratkaisu on: x = " + r1;

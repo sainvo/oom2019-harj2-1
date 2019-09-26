@@ -10,8 +10,8 @@ ole määritetty (spesifioitu) alkuunkaan.
 ohjelman keskeiset (ei-graafiset) toiminnot tulee määritettyä alku- ja loppuehdoin
 ja sanallisin kuvauksin.**
 
-Eli metodiin public void start(Stage window) ei tarvitse koskea eikä myöskään luokkaan AppMain. Tätä luokkaa tarvitaan vain, jotta
-ohjelman käyttöliittymä toimii oikein.
+Eli metodiin public void start(Stage window) ei tarvitse koskea eikä myöskään luokkaan AppMain. Tätä luokkaa tarvitaan
+vain, jotta ohjelman käyttöliittymä toimii oikein.
 
 **b)** 
 Ohjelman käytössä on tilanteita, jolloin se ei toimi oikein. Esim. kun b^2 < 4ac
