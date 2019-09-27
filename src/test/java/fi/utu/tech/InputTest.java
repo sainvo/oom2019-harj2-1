@@ -1,18 +1,20 @@
 package fi.utu.tech;
 
+//import org.junit.jupiter.api.*;
+
 import net.jqwik.api.*;
-import java.util.*;
 /*
  * 
  */
 class InputTest {
 	@Property boolean toteutuukoAlkuehto(@ForAll String input) {
+		boolean toteutuuko = false;
 		CalculatorApp e = new CalculatorApp();
-			if(e.inputSplitter(input).length == 3) {
-				return true;
-			}else{
-				return false;
-		}
-			
+		if(input !=null && input.length() > 0) {
+			String[] test = e.inputSplitter(input);
+			if(test.length == 3) {
+				toteutuuko = true;
+			}
+		}return toteutuuko;
 	}
 }

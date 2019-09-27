@@ -67,7 +67,6 @@ public class CalculatorApp extends Application {
 	
 		double disc = b*b - 4*a*c;
 		if(disc < 0) {
-			doubles = null;
 			throw new NoResultsException("Ei reaaliratkaisuja");
 		}else {
 			doubles.add(a);
@@ -78,24 +77,28 @@ public class CalculatorApp extends Application {
 		}return doubles;
 	}
 	
-	String calculate(String input) throws NoResultsException {
+	String calculate(String input) {
 		String[] valid = inputSplitter(input);
 		ArrayList<Double> doubles = new ArrayList<>();
+		double r1, r2;
+		String ratkaisu = "";
 		if(valid != null) {
-			if(discriminantCounter(valid) != null) {
+			try {
 				doubles = discriminantCounter(valid); 
 			}
-		}
-	
-		double r1, r2;
+			catch (NoResultsException e) {
+				input ="Diskriminantti on negatiivinen, ei ratkaisuja.";
+			}
+			finally {
+				r1 = (-(doubles.get(1))+Math.sqrt(doubles.get(3)))/(2*doubles.get(0));
+				r2 = (-(doubles.get(1))-Math.sqrt(doubles.get(3)))/(2*doubles.get(0));
+			}
 		
-		r1 = (-doubles.get(1)+Math.sqrt(doubles.get(3)))/(2*doubles.get(0));
-		r2 = (-doubles.get(1)-Math.sqrt(doubles.get(3)))/(2*doubles.get(0));
-		
-		if (r1 == r2)
-			return "Ratkaisu on: x = " + r1;
-		else
-			return "Ratkaisut ovat: x = " + r1 + " ja x = " + r2;
+			if (r1 == r2) 
+				ratkaisu = "Ratkaisu on: x = " + r1;
+			else 			
+				ratkaisu =  "Ratkaisut ovat: x = " + r1 + " ja x = " + r2;
+		}return ratkaisu;
 	}
 	
 	// tämä vaikuttaa valmiilta
