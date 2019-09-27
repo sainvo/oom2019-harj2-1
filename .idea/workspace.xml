@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1038cb92-db74-4cce-838c-399f8780872e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fi/utu/tech/CalculatorApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fi/utu/tech/CalculatorApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="1038cb92-db74-4cce-838c-399f8780872e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fi/utu/tech/CalculatorApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="92" column="5" lean-forward="true" selection-start-line="86" selection-start-column="74" selection-end-line="92" selection-end-column="5" />
+            <state relative-caret-position="17">
+              <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1667#1675#0" expanded="true" />
@@ -151,7 +147,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569499939371" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569531392683" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -169,7 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.InputTest">
     <configuration name="CalculatorApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fi.utu.tech.CalculatorApp" />
       <module name="CalculatorApp" />
@@ -179,6 +175,23 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InputTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="CalculatorApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="fi.utu.tech.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="fi.utu.tech" />
+      <option name="MAIN_CLASS_NAME" value="fi.utu.tech.InputTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -200,13 +213,20 @@
       <option name="presentableId" value="Default" />
       <updated>1569485251237</updated>
     </task>
+    <task id="LOCAL-00001" summary="palautus">
+      <created>1569531102511</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569531102511</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="88" width="1164" height="716" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26902175" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26902175" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -217,7 +237,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3270548" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3270548" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -245,6 +265,10 @@
       </list>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="palautus" />
+    <option name="LAST_COMMIT_MESSAGE" value="palautus" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/fi/utu/tech/AppMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -270,8 +294,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fi/utu/tech/CalculatorApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="92" column="5" lean-forward="true" selection-start-line="86" selection-start-column="74" selection-end-line="92" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1667#1675#0" expanded="true" />
