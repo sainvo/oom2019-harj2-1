@@ -59,7 +59,7 @@ public class CalculatorApp extends Application {
 	 * @.post RESULT > 0 || RESULT = 0
 	 * 
 	 */
-	ArrayList <Double> discriminantCounter (String[] splitInput) {
+	ArrayList <Double> discriminantCounter (String[] splitInput) throws NoResultsException {
 		ArrayList <Double> doubles = new ArrayList <Double>();
 		double a = Double.parseDouble(splitInput[0]);
 		double b = Double.parseDouble(splitInput[1]);
@@ -67,6 +67,7 @@ public class CalculatorApp extends Application {
 	
 		double disc = b*b - 4*a*c;
 		if(disc < 0) {
+			doubles = null;
 			throw new NoResultsException("Ei reaaliratkaisuja");
 		}else {
 			doubles.add(a);
@@ -77,10 +78,15 @@ public class CalculatorApp extends Application {
 		}return doubles;
 	}
 	
-	String calculate(String input) {
+	String calculate(String input) throws NoResultsException {
 		String[] valid = inputSplitter(input);
-		ArrayList<Double> doubles = discriminantCounter(valid);
-		
+		ArrayList<Double> doubles = new ArrayList<>();
+		if(valid != null) {
+			if(discriminantCounter(valid) != null) {
+				doubles = discriminantCounter(valid); 
+			}
+		}
+	
 		double r1, r2;
 		
 		r1 = (-doubles.get(1)+Math.sqrt(doubles.get(3)))/(2*doubles.get(0));
